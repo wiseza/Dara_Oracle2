@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dara</string>
+    <string name="hello_blank_fragment">...</string>
 </resources>

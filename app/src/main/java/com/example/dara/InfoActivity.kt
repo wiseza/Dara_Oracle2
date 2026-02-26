@@ -1,4 +1,4 @@
-package com.example.dara_oracle
+package com.example.dara
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
