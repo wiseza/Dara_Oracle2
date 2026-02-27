@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper_dara_2"
+    tools:context=".ShowFragment">
+
+    <View
+        android:id="@+id/showframe"
+        android:layout_width="346dp"
+        android:layout_height="378dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_show_frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346" />
+
+    <View
+        android:id="@+id/showframe2"
+        android:layout_width="349dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_show_frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
+
+    <View
+        android:id="@+id/showfg"
+        android:layout_width="154dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_show_fg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <View
+        android:id="@+id/showfg6"
+        android:layout_width="151dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_show_fg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522" />
+
+    <View
+        android:id="@+id/showfg7"
+        android:layout_width="151dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_show_fg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <View
+        android:id="@+id/showfg8"
+        android:layout_width="151dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_show_fg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <TextView
+        android:id="@+id/showtg2"
+        android:layout_width="151dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_show_tg"
+        android:gravity="left"
+        android:text="     การงาน"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/showframe"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="@+id/showframe"
+        app:layout_constraintTop_toTopOf="@+id/showframe" />
+
+    <TextView
+        android:id="@+id/showtg6"
+        android:layout_width="154dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_show_tg"
+        android:gravity="left"
+        android:text="     การงาน"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/showframe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/showframe"
+        app:layout_constraintTop_toTopOf="@+id/showframe" />
+
+    <TextView
+        android:id="@+id/showtg7"
+        android:layout_width="154dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_show_tg"
+        android:gravity="left"
+        android:text="     การงาน"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/showframe"
+        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintStart_toStartOf="@+id/showframe"
+        app:layout_constraintTop_toTopOf="@+id/showframe" />
+
+    <TextView
+        android:id="@+id/showtg"
+        android:layout_width="154dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_show_tg"
+        android:gravity="left"
+        android:text="     การงาน"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/showframe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/showframe"
+        app:layout_constraintTop_toTopOf="@+id/showframe" />
+
+    <TextView
+        android:id="@+id/gradient"
+        android:layout_width="318dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_show_gradient"
+        android:gravity="left"
+        android:text="     ดวงประจำวันนี้"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/showframe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/showframe"
+        app:layout_constraintTop_toTopOf="@+id/showframe" />
+
+    <View
+        android:id="@+id/showframe02"
+        android:layout_width="334dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_show_frame02"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.777" />
+
+    <TextView
+        android:id="@+id/showtg02"
+        android:layout_width="335dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="404dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_show_tg02"
+        android:gravity="left"
+        android:text="     สีมงคลประจำวัน"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/showframe"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="@+id/showframe"
+        app:layout_constraintTop_toTopOf="@+id/showframe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
