@@ -46,8 +46,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="344dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
         android:text="Dark / Light Mode"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,9 +68,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="208dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
         android:text="About App"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,7 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="372dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="348dp"
         android:src="@drawable/arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
