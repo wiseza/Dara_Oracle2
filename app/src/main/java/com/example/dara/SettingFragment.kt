@@ -1,12 +1,9 @@
 package com.example.dara
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
+import android.widget.ImageView // เพิ่มตัวนี้ถ้าปุ่มเป็นรูปภาพ
 import androidx.fragment.app.Fragment
-import com.example.dara.R
 
 class SettingFragment : Fragment(R.layout.fragment_setting) {
 
@@ -14,10 +11,24 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
         super.onViewCreated(view, savedInstanceState)
 
         val btnx = view.findViewById<View>(R.id.btn_x)
-
         btnx.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.contentContainer, HomeFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        val btnAbout = view.findViewById<View>(R.id.btn_about)
+        btnAbout.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.contentContainer, AboutFragment()) // ตรวจสอบชื่อ Class ว่าเป็น AboutFragment หรือไม่
+                .addToBackStack(null)
+                .commit()
+        }
+        val btnMode = view.findViewById<View>(R.id.btn_mode)
+        btnMode.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.contentContainer, ModeFragment())
                 .addToBackStack(null)
                 .commit()
         }
