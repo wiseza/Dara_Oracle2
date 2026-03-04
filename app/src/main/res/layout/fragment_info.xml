@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,19 +8,12 @@
     android:background="@drawable/info_dara"
     tools:context=".InfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- หัวข้อ -->
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="-370dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="283dp"
-        android:layout_height="36dp"
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
         android:text="โปรดกรอกข้อมูลของท่าน"
         android:textSize="25sp"
@@ -28,96 +22,85 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.348" />
+        app:layout_constraintVertical_bias="0.332" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/frameDay"
         android:layout_width="362dp"
         android:layout_height="111dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
         app:srcCompat="@drawable/frame" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="362dp"
-        android:layout_height="111dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546"
-        app:srcCompat="@drawable/frame" />
-
-    <EditText
-        android:id="@+id/editTextText"
+    <Spinner
+        android:id="@+id/spinnerDay"
         android:layout_width="227dp"
         android:layout_height="52dp"
-        android:ems="10"
-        android:hint="วัน"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
-
-    <EditText
-        android:id="@+id/edt_info_zodiac"
-        android:layout_width="227dp"
-        android:layout_height="52dp"
-        android:ems="10"
-        android:hint="ราศี"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintBottom_toBottomOf="@id/frameDay"
+        app:layout_constraintEnd_toEndOf="@id/frameDay"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@id/frameDay"
+        app:layout_constraintTop_toTopOf="@id/frameDay"
+        app:layout_constraintVertical_bias="0.593" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="35dp"
-        android:layout_height="34dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548"
-        app:srcCompat="@drawable/zodiac" />
-
-    <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/iconCalendar"
         android:layout_width="38dp"
         android:layout_height="42dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="@id/frameDay"
+        app:layout_constraintStart_toStartOf="@id/frameDay"
+        app:layout_constraintTop_toTopOf="@id/frameDay"
+        app:layout_constraintVertical_bias="0.507"
         app:srcCompat="@drawable/calendar" />
+
+    <ImageView
+        android:id="@+id/frameZodiac"
+        android:layout_width="362dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDay"
+        app:srcCompat="@drawable/frame" />
+
+    <Spinner
+        android:id="@+id/spinnerZodiac"
+        android:layout_width="227dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="@id/frameZodiac"
+        app:layout_constraintEnd_toEndOf="@id/frameZodiac"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@id/frameZodiac"
+        app:layout_constraintTop_toTopOf="@id/frameZodiac"
+        app:layout_constraintVertical_bias="0.559" />
+
+    <ImageView
+        android:id="@+id/iconZodiac"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/frameZodiac"
+        app:layout_constraintStart_toStartOf="@id/frameZodiac"
+        app:layout_constraintTop_toTopOf="@id/frameZodiac"
+        app:layout_constraintVertical_bias="0.545"
+        app:srcCompat="@drawable/zodiac" />
 
     <Button
         android:id="@+id/btn_info"
         android:layout_width="157dp"
         android:layout_height="67dp"
+        android:layout_marginTop="628dp"
         android:backgroundTint="#502342"
         android:fontFamily="@font/montserrat"
         android:text="ดูดวงวันนี้"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

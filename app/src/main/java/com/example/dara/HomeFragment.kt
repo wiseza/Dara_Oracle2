@@ -40,6 +40,5 @@ class HomeFragment : Fragment() {
                 .commit()
         }
 
-
     }
 }

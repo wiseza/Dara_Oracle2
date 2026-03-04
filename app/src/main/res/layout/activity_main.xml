@@ -48,13 +48,13 @@
             <ImageView
                 android:id="@+id/calendarCircle"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="60dp"
                 android:src="@drawable/small_circle" />
 
             <ImageView
                 android:id="@+id/btnCalendar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_calen"/>
         </FrameLayout>
@@ -73,13 +73,13 @@
             <ImageView
                 android:id="@+id/homeCircle"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="60dp"
                 android:src="@drawable/small_circle" />
 
             <ImageView
                 android:id="@+id/btnHome"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_home"/>
         </FrameLayout>
@@ -97,14 +97,14 @@
             <ImageView
                 android:id="@+id/cardCircle"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="60dp"
                 android:src="@drawable/small_circle" />
 
 
             <ImageView
                 android:id="@+id/btnCard"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_card"/>
         </FrameLayout>

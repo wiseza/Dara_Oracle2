@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">Dara</string>
     <string name="hello_blank_fragment">...</string>
+
+    <string-array name="days_array">
+        <item>เลือกวัน</item>
+        <item>จันทร์</item>
+        <item>อังคาร</item>
+        <item>พุธ</item>
+        <item>พฤหัสบดี</item>
+        <item>ศุกร์</item>
+        <item>เสาร์</item>
+        <item>อาทิตย์</item>
+    </string-array>
+
+    <string-array name="zodiac_array">
+        <item>เลือกราศี</item>
+        <item>เมษ</item>
+        <item>พฤษภ</item>
+        <item>เมถุน</item>
+        <item>กรกฎ</item>
+        <item>สิงห์</item>
+        <item>กันย์</item>
+        <item>ตุลย์</item>
+        <item>พิจิก</item>
+        <item>ธนู</item>
+        <item>มังกร</item>
+        <item>กุมภ์</item>
+        <item>มีน</item>
+    </string-array>
 </resources>
