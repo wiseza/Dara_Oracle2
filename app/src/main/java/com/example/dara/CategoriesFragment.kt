@@ -15,10 +15,7 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
         val btnop = view.findViewById<View>(R.id.btn_open)
 
         btnop.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, WorkFragment())
-                .addToBackStack(null)
-                .commit()
+            (activity as MainActivity).openTab(WorkFragment(),2)
         }
     }
 }

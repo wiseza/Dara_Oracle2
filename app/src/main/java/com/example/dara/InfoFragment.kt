@@ -52,10 +52,7 @@ class InfoFragment : Fragment(R.layout.fragment_info) {
             val fragment = CategoriesFragment()
             fragment.arguments = bundle
 
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, fragment)
-                .addToBackStack(null)
-                .commit()
+            (activity as MainActivity).openTab(CategoriesFragment(),2)
         }
     }
 }

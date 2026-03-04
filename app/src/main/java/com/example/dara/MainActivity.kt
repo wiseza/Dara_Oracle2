@@ -8,7 +8,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.dara.CardFragment
+import com.example.dara.CategoriesFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,31 +16,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // โหลดหน้าแรกก่อน //
         replaceFragment(HomeFragment())
         setActiveTab(0)
 
         findViewById<View>(R.id.homeContainer).setOnClickListener {
-            replaceFragment(HomeFragment())
-            setActiveTab(0)
+            openTab(HomeFragment(),0)
         }
 
         findViewById<View>(R.id.calendarContainer).setOnClickListener {
-            replaceFragment(CalendarFragment())
-            setActiveTab(1)
+            openTab(CalendarFragment(),1)
         }
 
-        findViewById<View>(R.id.cardContainer).setOnClickListener {
-            replaceFragment(CardFragment())
-            setActiveTab(2)
+        findViewById<View>(R.id.categoriesContainer).setOnClickListener {
+            openTab(CategoriesFragment(),2)
         }
-
     }
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.contentContainer, fragment)
             .commit()
+    }
+
+    fun openTab(fragment: Fragment, tab: Int) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.contentContainer, fragment)
+            .commit()
+
+        setActiveTab(tab)
     }
     private fun setActiveTab(active: Int) {
 
