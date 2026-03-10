@@ -3,6 +3,7 @@ package com.example.dara
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.dara.R
 
 class CalendarFragment : Fragment(R.layout.fragment_calendar) {
 
@@ -11,14 +12,8 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
 
         val btnBack = view.findViewById<View>(R.id.btnback_cal)
 
-        btnBack?.setOnClickListener {
-            if (parentFragmentManager.backStackEntryCount > 0) {
-                parentFragmentManager.popBackStack()
-            } else {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.contentContainer, ShowFragment())
-                    .commit()
-            }
+        btnBack.setOnClickListener {
+            (activity as MainActivity).openTab(ShowFragment(),0)
         }
     }
 }

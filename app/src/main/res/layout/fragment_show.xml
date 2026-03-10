@@ -39,57 +39,41 @@
         android:id="@+id/showfg"
         android:layout_width="151dp"
         android:layout_height="116dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="11.5dp"
+        android:layout_marginTop="86dp"
         android:background="@drawable/bg_show_fg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintStart_toStartOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showframe" />
 
     <View
         android:id="@+id/showfg6"
         android:layout_width="151dp"
         android:layout_height="116dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/bg_show_fg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
+        app:layout_constraintEnd_toEndOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showframe" />
 
     <View
         android:id="@+id/showfg7"
         android:layout_width="151dp"
         android:layout_height="116dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="227dp"
         android:background="@drawable/bg_show_fg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522" />
+        app:layout_constraintStart_toStartOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showframe" />
 
     <View
         android:id="@+id/showfg8"
         android:layout_width="151dp"
         android:layout_height="116dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/bg_show_fg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintEnd_toEndOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showframe" />
 
     <TextView
         android:id="@+id/showtg2"
@@ -99,7 +83,6 @@
         android:layout_marginTop="88dp"
         android:layout_marginEnd="13.5dp"
         android:background="@drawable/bg_show_tg"
-        android:gravity="left"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -132,7 +115,6 @@
         android:layout_marginTop="229.5dp"
         android:layout_marginEnd="14.5dp"
         android:background="@drawable/bg_show_tg"
-        android:gravity="left"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -149,7 +131,6 @@
         android:layout_marginTop="88dp"
         android:layout_marginEnd="12dp"
         android:background="@drawable/bg_show_tg"
-        android:gravity="left"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -191,20 +172,20 @@
 
     <TextView
         android:id="@+id/showtg02"
-        android:layout_width="320dp"
+        android:layout_width="321dp"
         android:layout_height="45dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="414dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/bg_show_tg02"
         android:gravity="left"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/showframe"
+        app:layout_constraintEnd_toEndOf="@id/showframe02"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/showframe"
-        app:layout_constraintTop_toTopOf="@+id/showframe" />
+        app:layout_constraintStart_toStartOf="@id/showframe02"
+        app:layout_constraintTop_toTopOf="@id/showframe02" />
 
     <TextView
         android:id="@+id/textView6"
@@ -224,76 +205,75 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="การงาน : "
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/showtg"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showfg" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="156dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="การเงิน : "
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/showtg6"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showfg" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="156dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="สุขภาพ : "
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/showtg7"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showfg" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="ความรัก : "
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/showtg2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/showframe"
+        app:layout_constraintTop_toTopOf="@id/showfg" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="สีมงคลประจำวัน"
         android:textColor="#2A2766"
-        android:textFontWeight="700"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/showtg02"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/showframe02"
+        app:layout_constraintTop_toTopOf="@id/showframe02"/>
 
     <ImageView
         android:id="@+id/btnshow_next"
         android:layout_width="45dp"
         android:layout_height="49dp"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="590dp"
+        android:layout_marginEnd="3dp"
         android:src="@drawable/next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/showframe02"
+        app:layout_constraintTop_toTopOf="@id/showframe02" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

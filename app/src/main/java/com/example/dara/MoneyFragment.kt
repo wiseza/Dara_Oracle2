@@ -41,10 +41,7 @@ class MoneyFragment : Fragment(R.layout.fragment_money) {
         }
 
         btnnx.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, LoveFragment())
-                .addToBackStack(null)
-                .commit()
+            (activity as MainActivity).openTab(HealthFragment(),2)
         }
     }
 }

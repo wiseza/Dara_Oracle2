@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.contentContainer, fragment)
             .commit()
@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         setActiveTab(tab)
     }
+
     private fun setActiveTab(active: Int) {
 
         val homeCircle = findViewById<ImageView>(R.id.homeCircle)

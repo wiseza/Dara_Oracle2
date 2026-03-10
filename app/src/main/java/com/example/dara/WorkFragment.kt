@@ -41,10 +41,7 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
         }
 
         btnnx.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, LoveFragment())
-                .addToBackStack(null)
-                .commit()
+            (activity as MainActivity).openTab(LoveFragment(),2)
         }
     }
 }

@@ -42,7 +42,7 @@ class HealthFragment : Fragment(R.layout.fragment_health) {
 
         btnnx.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, LoveFragment())
+                .replace(R.id.contentContainer, ShowFragment())
                 .addToBackStack(null)
                 .commit()
         }
