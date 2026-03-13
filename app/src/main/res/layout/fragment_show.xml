@@ -260,12 +260,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="สีมงคลประจำวัน"
+        android:text="สีเสื้อมงคลประจำวัน"
         android:textColor="#2A2766"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/showframe02"
-        app:layout_constraintTop_toTopOf="@id/showframe02"/>
+        app:layout_constraintTop_toTopOf="@id/showframe02" />
 
     <ImageView
         android:id="@+id/btnshow_next"
@@ -275,5 +275,175 @@
         android:src="@drawable/next"
         app:layout_constraintEnd_toEndOf="@id/showframe02"
         app:layout_constraintTop_toTopOf="@id/showframe02" />
+
+    <TextView
+        android:id="@+id/texwork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="การงาน"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <TextView
+        android:id="@+id/texlove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ความรัก"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <TextView
+        android:id="@+id/texmoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="การเงิน"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <TextView
+        android:id="@+id/texhealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="สุขภาพ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <ImageView
+        android:id="@+id/img_work_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <ImageView
+        android:id="@+id/img_work_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <ImageView
+        android:id="@+id/img_love_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <ImageView
+        android:id="@+id/img_love_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <ImageView
+        android:id="@+id/img_money_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <ImageView
+        android:id="@+id/img_money_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <ImageView
+        android:id="@+id/img_health_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <ImageView
+        android:id="@+id/img_health_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.816"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <TextView
+        android:id="@+id/tv_full_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#EFE8E8FF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108" />
+
+    <TextView
+        android:id="@+id/tv_day_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#EFE8E8"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.Dara" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/activeColor</item>
+        <item name="colorSecondary">@color/light_purple</item>
     </style>
 
     <style name="RoundedImage">
@@ -11,4 +11,5 @@
     </style>
 
     <style name="Theme.Dara" parent="Base.Theme.Dara" />
+
 </resources>
