@@ -32,7 +32,8 @@ class ShowFragment : Fragment(R.layout.fragment_show) {
         Calendar.SATURDAY to DailyColor(listOf("#CC0000", "#FF0000"), listOf("#4169E1", "#00BFFF"), listOf("#6F31B1", "#8A2BE2"), listOf("#FF69B4", "#FFC0CB"))
     )
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
+    {
         super.onViewCreated(view, savedInstanceState)
 
         // --- ส่วนที่ 1: จัดการวันที่ปัจจุบัน ---

@@ -9,6 +9,7 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
@@ -22,20 +23,35 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/wallpaper_random" />
 
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/wallpaper_random" />
+
     <View
-        android:layout_width="166dp"
-        android:layout_height="68dp"
+        android:id="@+id/view01"
+        android:layout_width="169dp"
+        android:layout_height="74dp"
         android:background="@drawable/bg_calendar_gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
+        app:layout_constraintVertical_bias="0.236" />
 
     <View
-        android:layout_width="384dp"
-        android:layout_height="93dp"
+        android:id="@+id/view02"
+        android:layout_width="391dp"
+        android:layout_height="80dp"
         android:background="@drawable/bg_calendar_frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,19 +60,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.284" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:background="@drawable/bg_calendar_fg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
 
     <View
+        android:id="@+id/view03"
         android:layout_width="370dp"
         android:layout_height="207dp"
         android:background="@drawable/bg_calendar_frame02"
@@ -68,7 +74,7 @@
         app:layout_constraintVertical_bias="0.542" />
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/view04"
         android:layout_width="373dp"
         android:layout_height="52dp"
         android:background="@drawable/bg_calendar_grad02"
@@ -96,6 +102,7 @@
         app:strokeColor="#000000"
         app:strokeWidth="1dp" />
 
+
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
@@ -103,97 +110,315 @@
         android:fontFamily="@font/montserrat_semibold"
         android:text="สีเสื้อมงคลวันนี้"
         android:textColor="#FFFFFF"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.237" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
+        app:layout_constraintVertical_bias="0.233" />
+    <LinearLayout
+        android:id="@+id/tab_work"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="การงาน"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        app:layout_constraintTop_toTopOf="@+id/view02"       app:layout_constraintBottom_toBottomOf="@+id/view02" app:layout_constraintStart_toStartOf="@+id/view02"   app:layout_constraintEnd_toStartOf="@+id/tab_love"
+        app:layout_constraintHorizontal_chainStyle="spread">
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
+
+        <FrameLayout
+            android:layout_width="45dp"
+            android:layout_height="30dp">
+            <ImageView
+                android:id="@+id/img_work_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="start" />
+            <ImageView
+                android:id="@+id/img_work_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="end" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="การงาน"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_love"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="ความรัก"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tab_work" app:layout_constraintTop_toTopOf="@+id/tab_work"
+        app:layout_constraintStart_toEndOf="@+id/tab_work"
+        app:layout_constraintEnd_toStartOf="@+id/tab_money">
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="45dp"
+            android:layout_height="30dp">
+            <ImageView
+                android:id="@+id/img_love_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="start" />
+            <ImageView
+                android:id="@+id/img_love_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="end" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="ความรัก"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_money"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="การเงิน"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tab_work"
+        app:layout_constraintTop_toTopOf="@+id/tab_work"
+        app:layout_constraintStart_toEndOf="@+id/tab_love"
+        app:layout_constraintEnd_toStartOf="@+id/tab_health">
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="45dp"
+            android:layout_height="30dp">
+            <ImageView
+                android:id="@+id/img_money_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="start" />
+            <ImageView
+                android:id="@+id/img_money_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="end" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="การเงิน"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_health"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="สุขภาพ"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tab_work"
+        app:layout_constraintTop_toTopOf="@+id/tab_work"
+        app:layout_constraintStart_toEndOf="@+id/tab_money"
+        app:layout_constraintEnd_toStartOf="@+id/tab_bad">
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="45dp"
+            android:layout_height="30dp">
+            <ImageView
+                android:id="@+id/img_health_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="start" />
+            <ImageView
+                android:id="@+id/img_health_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/circle_shape"
+                android:layout_gravity="end" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="สุขภาพ"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_bad"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="หลีกเลี่ยง"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tab_work"
+        app:layout_constraintTop_toTopOf="@+id/tab_work"
+        app:layout_constraintStart_toEndOf="@+id/tab_health"
+        app:layout_constraintEnd_toEndOf="@+id/view02"> <FrameLayout
+        android:layout_width="45dp"
+        android:layout_height="30dp">
+        <ImageView
+            android:id="@+id/img_bad_1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/circle_shape"
+            android:layout_gravity="start" />
+        <ImageView
+            android:id="@+id/img_bad_2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/circle_shape"
+            android:layout_gravity="end" />
+    </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="หลีกเลี่ยง"
+            android:textSize="12sp" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/tv_detail_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_semibold"
         android:text="การงาน"
         android:textColor="#FFFFFF"
         android:textSize="28sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_work"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/tv_detail_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_header" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="_________________________________________"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="|"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.266" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="|"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.313" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="|"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="31dp"
+        android:layout_height="28dp"
+        android:src="@drawable/colorshades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <TextView
+        android:id="@+id/tv_day_name_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFFFF"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.414" />
+        app:layout_constraintVertical_bias="0.047" />
+
+    <TextView
+        android:id="@+id/tv_full_date_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
