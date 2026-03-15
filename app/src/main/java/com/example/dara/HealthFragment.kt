@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kotlin.random.Random
 
 class HealthFragment : Fragment(R.layout.fragment_health) {
 
@@ -26,70 +25,57 @@ class HealthFragment : Fragment(R.layout.fragment_health) {
         val day = arguments?.getString("day") ?: ""
         val zodiac = arguments?.getString("zodiac") ?: ""
 
-        if (UserPrefs.isTodayFortuneSaved(requireContext())) {
-            currentCardIndex = UserPrefs.getLoveCardIndex(requireContext())
-            if (currentCardIndex != -1) {
-                val card = TarotDeck.cards[currentCardIndex]
-                cardImage.setImageResource(card.image)
-                textAdvice.text = card.meanings["health"] ?: ""
-                btnOra.isEnabled = false
-            }
+        currentCardIndex = UserPrefs.getHealthCardIndex(requireContext())
+        if (currentCardIndex != -1) {
+            val card = TarotDeck.cards[currentCardIndex]
+            cardImage.setImageResource(card.image)
+            textAdvice.text = card.meanings["health"] ?: ""
+            btnOra.isEnabled = false
         } else {
             cardImage.setImageResource(R.drawable.backcard)
             textAdvice.text = ""
+            btnOra.isEnabled = true
         }
 
         btnOra.setOnClickListener {
-
-            if (!UserPrefs.isTodayFortuneSaved(requireContext())) {
-
-                val index = FortuneCalculator.getLoveCard(day, zodiac)
+            if (UserPrefs.getHealthCardIndex(requireContext()) == -1) {
+                val index = FortuneCalculator.getHealthCard(day, zodiac)
                 val card = TarotDeck.cards[index]
-
                 currentCardIndex = index
 
-                saveSingleCardIndex(requireContext(), index, "health")
+                UserPrefs.saveCardIndices(
+                    requireContext(),
+                    UserPrefs.getWorkCardIndex(requireContext()),
+                    UserPrefs.getLoveCardIndex(requireContext()),
+                    UserPrefs.getMoneyCardIndex(requireContext()),
+                    index // health
+                )
 
                 flipCard(cardImage, card.image, 4, textAdvice, card.meanings["health"] ?: "")
                 btnOra.isEnabled = false
-
             } else {
-                Toast.makeText(requireContext(),"คุณได้ทำนายดวงวันนี้ไปแล้ว",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "คุณได้ทำนายดวงสุขภาพวันนี้ไปแล้ว", Toast.LENGTH_SHORT).show()
             }
         }
 
-            btnb.setOnClickListener {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.contentContainer, CategoriesFragment())
-                    .addToBackStack(null)
-                    .commit()
-            }
-
-            btnnx.setOnClickListener {
-
-                val fragment = ShowFragment()
-                fragment.arguments = arguments
-
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.contentContainer, fragment)
-                    .addToBackStack(null)
-                    .commit()
-            }
+        btnb.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.contentContainer, CategoriesFragment())
+                .addToBackStack(null)
+                .commit()
         }
 
-    private fun saveSingleCardIndex(context: Context, index: Int, category: String) {
-        val work = if (category == "work") index else UserPrefs.getWorkCardIndex(context)
-        val love = if (category == "love") index else UserPrefs.getLoveCardIndex(context)
-        val money = if (category == "money") index else UserPrefs.getMoneyCardIndex(context)
-        val health = if (category == "health") index else UserPrefs.getHealthCardIndex(context)
-        UserPrefs.saveCardIndices(context, work, love, money, health)
+        btnnx.setOnClickListener {
+            val fragment = ShowFragment()
+            fragment.arguments = arguments
+            (activity as MainActivity).openTab(fragment, 2)
+        }
     }
-    fun flipCard(imageView: ImageView, finalImage: Int, flips: Int, textView: TextView, advice: String) {
+
+    private fun flipCard(imageView: ImageView, finalImage: Int, flips: Int, textView: TextView, advice: String) {
         if (flips <= 0) {
             imageView.setImageResource(finalImage)
             imageView.rotationY = 0f
-
-            // แสดงข้อความตอนหมุนเสร็จ
             textView.text = advice
             return
         }
@@ -98,15 +84,12 @@ class HealthFragment : Fragment(R.layout.fragment_health) {
             .rotationY(90f)
             .setDuration(200)
             .withEndAction {
-
                 if (flips == 1) {
                     imageView.setImageResource(finalImage)
                 } else {
                     imageView.setImageResource(R.drawable.backcard)
                 }
-
                 imageView.rotationY = -90f
-
                 imageView.animate()
                     .rotationY(0f)
                     .setDuration(200)
@@ -117,4 +100,4 @@ class HealthFragment : Fragment(R.layout.fragment_health) {
             }
             .start()
     }
-    }
+}

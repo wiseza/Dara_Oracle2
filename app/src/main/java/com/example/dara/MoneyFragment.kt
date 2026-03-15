@@ -25,38 +25,38 @@ class MoneyFragment : Fragment(R.layout.fragment_money) {
         val day = arguments?.getString("day") ?: ""
         val zodiac = arguments?.getString("zodiac") ?: ""
 
-        if (UserPrefs.isTodayFortuneSaved(requireContext())) {
-            currentCardIndex = UserPrefs.getLoveCardIndex(requireContext())
-            if (currentCardIndex != -1) {
-                val card = TarotDeck.cards[currentCardIndex]
-                cardImage.setImageResource(card.image)
-                textAdvice.text = card.meanings["money"] ?: ""
-                btnOra.isEnabled = false
-            }
+        currentCardIndex = UserPrefs.getMoneyCardIndex(requireContext())
+        if (currentCardIndex != -1) {
+            val card = TarotDeck.cards[currentCardIndex]
+            cardImage.setImageResource(card.image)
+            textAdvice.text = card.meanings["money"] ?: ""
+            btnOra.isEnabled = false
         } else {
             cardImage.setImageResource(R.drawable.backcard)
             textAdvice.text = ""
+            btnOra.isEnabled = true
         }
 
         btnOra.setOnClickListener {
-
-            if (!UserPrefs.isTodayFortuneSaved(requireContext())) {
-
-                val index = FortuneCalculator.getLoveCard(day, zodiac)
+            if (UserPrefs.getMoneyCardIndex(requireContext()) == -1) {
+                val index = FortuneCalculator.getMoneyCard(day, zodiac)
                 val card = TarotDeck.cards[index]
-
                 currentCardIndex = index
 
-                saveSingleCardIndex(requireContext(), index, "money")
+                UserPrefs.saveCardIndices(
+                    requireContext(),
+                    UserPrefs.getWorkCardIndex(requireContext()),
+                    UserPrefs.getLoveCardIndex(requireContext()),
+                    index, // money
+                    UserPrefs.getHealthCardIndex(requireContext())
+                )
 
                 flipCard(cardImage, card.image, 4, textAdvice, card.meanings["money"] ?: "")
                 btnOra.isEnabled = false
-
             } else {
-                Toast.makeText(requireContext(),"คุณได้ทำนายดวงวันนี้ไปแล้ว",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "คุณได้ทำนายดวงการเงินวันนี้ไปแล้ว", Toast.LENGTH_SHORT).show()
             }
         }
-
 
         btnb.setOnClickListener {
             parentFragmentManager.beginTransaction()
@@ -66,28 +66,16 @@ class MoneyFragment : Fragment(R.layout.fragment_money) {
         }
 
         btnnx.setOnClickListener {
-
             val fragment = HealthFragment()
             fragment.arguments = arguments
-
-            (activity as MainActivity).openTab(fragment,2)
+            (activity as MainActivity).openTab(fragment, 2)
         }
     }
 
-    private fun saveSingleCardIndex(context: Context, index: Int, category: String) {
-        val work = if (category == "work") index else UserPrefs.getWorkCardIndex(context)
-        val love = if (category == "love") index else UserPrefs.getLoveCardIndex(context)
-        val money = if (category == "money") index else UserPrefs.getMoneyCardIndex(context)
-        val health = if (category == "health") index else UserPrefs.getHealthCardIndex(context)
-        UserPrefs.saveCardIndices(context, work, love, money, health)
-    }
-
-    fun flipCard(imageView: ImageView, finalImage: Int, flips: Int, textView: TextView, advice: String) {
+    private fun flipCard(imageView: ImageView, finalImage: Int, flips: Int, textView: TextView, advice: String) {
         if (flips <= 0) {
             imageView.setImageResource(finalImage)
             imageView.rotationY = 0f
-
-            // แสดงข้อความตอนหมุนเสร็จ
             textView.text = advice
             return
         }
@@ -96,15 +84,12 @@ class MoneyFragment : Fragment(R.layout.fragment_money) {
             .rotationY(90f)
             .setDuration(200)
             .withEndAction {
-
                 if (flips == 1) {
                     imageView.setImageResource(finalImage)
                 } else {
                     imageView.setImageResource(R.drawable.backcard)
                 }
-
                 imageView.rotationY = -90f
-
                 imageView.animate()
                     .rotationY(0f)
                     .setDuration(200)

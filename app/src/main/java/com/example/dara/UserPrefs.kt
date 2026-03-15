@@ -46,6 +46,20 @@ object UserPrefs {
         editor.apply()
     }
 
+    fun saveSingleCard(context: Context, index: Int, category: String) {
+        val today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR)
+        val editor = getPrefs(context).edit()
+
+        when(category){
+            "work"  -> editor.putInt(KEY_WORK_CARD, index)
+            "love"  -> editor.putInt(KEY_LOVE_CARD, index)
+            "money" -> editor.putInt(KEY_MONEY_CARD, index)
+            "health"-> editor.putInt(KEY_HEALTH_CARD, index)
+        }
+        editor.putInt(KEY_LAST_UPDATE, today)
+        editor.apply()
+    }
+
     fun getWorkCardIndex(context: Context): Int =
         getPrefs(context).getInt(KEY_WORK_CARD, -1)
 

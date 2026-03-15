@@ -56,12 +56,9 @@ class InfoFragment : Fragment(R.layout.fragment_info) {
 
             UserPrefs.saveUserInfo(requireContext(), day, zodiac)
 
-            val bundle = Bundle().apply {
-                putString("day", day)
-                putString("zodiac", zodiac)
-            }
-            val fragment = CategoriesFragment().apply { arguments = bundle }
-            (activity as MainActivity).openTab(fragment, 2)
+            UserPrefs.saveUserInfo(requireContext(), day, zodiac)
+
+            (activity as MainActivity).openTab(CategoriesFragment(), 2)
         }
     }
 }
