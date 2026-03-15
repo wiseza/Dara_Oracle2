@@ -46,26 +46,21 @@ class InfoFragment : Fragment(R.layout.fragment_info) {
         spinnerZodiac.adapter = zodiacAdapter
 
         btnInfo.setOnClickListener {
-
             val day = spinnerDay.selectedItem.toString()
             val zodiac = spinnerZodiac.selectedItem.toString()
 
-            if (day == "เลือกวัน") {
-                Toast.makeText(requireContext(),"กรุณาเลือกวันเกิด",Toast.LENGTH_SHORT).show()
+            if (day == "เลือกวัน" || zodiac == "เลือกราศี") {
+                Toast.makeText(requireContext(), "กรุณาเลือกข้อมูลให้ครบ", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (zodiac == "เลือกราศี") {
-                Toast.makeText(requireContext(),"กรุณาเลือกราศี",Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            UserPrefs.saveUserInfo(requireContext(), day, zodiac)
+
+            val bundle = Bundle().apply {
+                putString("day", day)
+                putString("zodiac", zodiac)
             }
-
-            val bundle = Bundle()
-            bundle.putString("day", day)
-            bundle.putString("zodiac", zodiac)
-
-            val fragment = CategoriesFragment()
-            fragment.arguments = bundle
+            val fragment = CategoriesFragment().apply { arguments = bundle }
             (activity as MainActivity).openTab(fragment, 2)
         }
     }

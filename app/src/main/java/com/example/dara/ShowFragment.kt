@@ -70,10 +70,29 @@ class ShowFragment : Fragment(R.layout.fragment_show) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val workStar = (1..5).random()
-        val loveStar = (1..5).random()
-        val moneyStar = (1..5).random()
-        val healthStar = (1..5).random()
+        val context = requireContext()
+
+        val day = UserPrefs.getUserDay(context) ?: ""
+        val zodiac = UserPrefs.getUserZodiac(context) ?: ""
+
+        if (!UserPrefs.isTodayFortuneSaved(context)) {
+            val workIndex = FortuneCalculator.getWorkCard(day, zodiac)
+            val loveIndex = FortuneCalculator.getLoveCard(day, zodiac)
+            val moneyIndex = FortuneCalculator.getMoneyCard(day, zodiac)
+            val healthIndex = FortuneCalculator.getHealthCard(day, zodiac)
+            UserPrefs.saveCardIndices(context, workIndex, loveIndex, moneyIndex, healthIndex)
+        }
+
+
+        val workIndex = UserPrefs.getWorkCardIndex(context)
+        val loveIndex = UserPrefs.getLoveCardIndex(context)
+        val moneyIndex = UserPrefs.getMoneyCardIndex(context)
+        val healthIndex = UserPrefs.getHealthCardIndex(context)
+
+        val workStar = getDeterministicStar(day, zodiac, "work")
+        val loveStar = getDeterministicStar(day, zodiac, "love")
+        val moneyStar = getDeterministicStar(day, zodiac, "money")
+        val healthStar = getDeterministicStar(day, zodiac, "health")
 
         val extraWork = ExtraAdvice.getRandomWorkAdvice(workStar, 2).joinToString("\n")
         val extraLove = ExtraAdvice.getRandomLoveAdvice(loveStar, 2).joinToString("\n")
@@ -137,7 +156,6 @@ class ShowFragment : Fragment(R.layout.fragment_show) {
                 updateCircleColor(view.findViewById(R.id.img_health_2), colors.health[1])
         }
 
-        // ปุ่ม Next
         val btnNext = view.findViewById<ImageView>(R.id.btnshow_next)
         btnNext.setOnClickListener {
             (activity as? MainActivity)?.openTab(CalendarFragment(), 1)
@@ -156,6 +174,12 @@ class ShowFragment : Fragment(R.layout.fragment_show) {
 
             it.setImageDrawable(newDrawable)
         }
+    }
+
+    private fun getDeterministicStar(day: String, zodiac: String, category: String): Int {
+        val seed = (day.hashCode() + zodiac.hashCode() + Calendar.getInstance().get(Calendar.DAY_OF_YEAR)) * category.hashCode()
+        val random = java.util.Random(seed.toLong())
+        return random.nextInt(5) + 1  // 1-5
     }
 
     private fun starText(score: Int): String {

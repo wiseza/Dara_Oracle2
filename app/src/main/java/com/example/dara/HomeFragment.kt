@@ -25,6 +25,15 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val context = requireContext()
+
+        if (UserPrefs.hasUserInfo(context) && UserPrefs.isTodayFortuneSaved(context)) {
+
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.contentContainer, ShowFragment())
+                .commit()
+
+        }
 
         val calendar = Calendar.getInstance()
         val localeThai = Locale("th", "TH")
@@ -42,12 +51,24 @@ class HomeFragment : Fragment() {
         val btnset = view.findViewById<View>(R.id.btn_setting)
 
         btnMain.setOnClickListener {
-            val infoFragment = InfoFragment()
-            val transaction = parentFragmentManager.beginTransaction()
 
-            transaction.replace(R.id.contentContainer, infoFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
+            val context = requireContext()
+
+            if (!UserPrefs.hasUserInfo(context)) {
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.contentContainer, InfoFragment())
+                    .addToBackStack(null)
+                    .commit()
+
+            } else {
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.contentContainer, ShowFragment())
+                    .addToBackStack(null)
+                    .commit()
+
+            }
         }
 
         btnset.setOnClickListener {
