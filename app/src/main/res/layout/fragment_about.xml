@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.52" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/txtwork"
         android:layout_width="332dp"
         android:layout_height="119dp"
         android:fontFamily="@font/montserrat_bold"
@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="0.632" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/txtlove"
         android:layout_width="361dp"
         android:layout_height="45dp"
         android:text="_________________________________"

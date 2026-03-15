@@ -21,14 +21,7 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
         val btnAbout = view.findViewById<View>(R.id.btn_about)
         btnAbout.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, AboutFragment()) // ตรวจสอบชื่อ Class ว่าเป็น AboutFragment หรือไม่
-                .addToBackStack(null)
-                .commit()
-        }
-        val btnMode = view.findViewById<View>(R.id.btn_mode)
-        btnMode.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, ModeFragment())
+                .replace(R.id.contentContainer, AboutFragment())
                 .addToBackStack(null)
                 .commit()
         }

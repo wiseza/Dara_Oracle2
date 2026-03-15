@@ -27,9 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:fontFamily="@font/montserrat_bold"
         android:text="การงาน"
         android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserrat_bold"
         android:textFontWeight="700"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,17 +100,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="คำแนะนำ : "
+                android:text="ความหมาย : "
+                android:textFontWeight="700"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textAdvice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:fontFamily="@font/montserrat"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="13sp" />
 
         </LinearLayout>
 

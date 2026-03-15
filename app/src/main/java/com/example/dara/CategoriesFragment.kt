@@ -31,8 +31,19 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
 
         val btnop = view.findViewById<View>(R.id.btn_open)
 
+        val day = arguments?.getString("day") ?: ""
+        val zodiac = arguments?.getString("zodiac") ?: ""
+
         btnop.setOnClickListener {
-            (activity as MainActivity).openTab(WorkFragment(),2)
+
+            val bundle = Bundle()
+            bundle.putString("day", day)
+            bundle.putString("zodiac", zodiac)
+
+            val fragment = WorkFragment()
+            fragment.arguments = bundle
+
+            (activity as MainActivity).openTab(fragment,2)
         }
     }
 }

@@ -202,53 +202,104 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/txtwork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="การงาน : "
-        android:textSize="10sp"
+        android:text="การงาน :     "
+        android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/showframe"
         app:layout_constraintTop_toTopOf="@id/showfg" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/txtmoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="156dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="การเงิน : "
-        android:textSize="10sp"
+        android:text="การเงิน :     "
+        android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/showframe"
         app:layout_constraintTop_toTopOf="@id/showfg" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/txtWorkAdvice"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/showfg"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="@+id/showfg"
+        app:layout_constraintTop_toTopOf="@+id/showfg" />
+
+    <TextView
+        android:id="@+id/txtLoveAdvice"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/showfg8"
+        app:layout_constraintStart_toStartOf="@+id/showfg8"
+        app:layout_constraintTop_toTopOf="@+id/showfg8" />
+
+    <TextView
+        android:id="@+id/txtMoneyAdvice"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/showfg7"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="@+id/showfg7"
+        app:layout_constraintTop_toTopOf="@+id/showfg7" />
+
+    <TextView
+        android:id="@+id/txtHealthAdvice"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/showfg6"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/showfg6"
+        app:layout_constraintTop_toTopOf="@+id/showfg6" />
+
+    <TextView
+        android:id="@+id/txthealth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="192dp"
         android:layout_marginTop="156dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="สุขภาพ : "
-        android:textSize="10sp"
+        android:text="สุขภาพ :     "
+        android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/showframe"
         app:layout_constraintTop_toTopOf="@id/showfg" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/txtlove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="192dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="ความรัก : "
-        android:textSize="10sp"
+        android:text="ความรัก :     "
+        android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/showframe"
         app:layout_constraintTop_toTopOf="@id/showfg" />
@@ -426,6 +477,8 @@
         android:layout_height="wrap_content"
         android:textColor="#EFE8E8FF"
         android:textSize="30sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
@@ -439,6 +492,8 @@
         android:layout_height="wrap_content"
         android:textColor="#EFE8E8"
         android:textSize="30sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textFontWeight="700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"

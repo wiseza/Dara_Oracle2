@@ -10,6 +10,9 @@ import kotlin.random.Random
 
 class HealthFragment : Fragment(R.layout.fragment_health) {
 
+    var currentCard: TarotCard? = null
+    var showingInfo = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -19,32 +22,69 @@ class HealthFragment : Fragment(R.layout.fragment_health) {
         val btnb = view.findViewById<Button>(R.id.btn_back)
         val btnnx = view.findViewById<Button>(R.id.btn_next)
 
-        val cards = listOf(
-            Pair(R.drawable.empress, "วันนี้เหมาะกับการดูแลตัวเอง และเปิดใจรับสิ่งดี ๆ"),
-            Pair(R.drawable.fool, "ลองเริ่มต้นสิ่งใหม่ อย่ากลัวการเปลี่ยนแปลง"),
-            Pair(R.drawable.magician, "คุณมีศักยภาพที่จะทำสิ่งที่คิดให้สำเร็จ"),
-            Pair(R.drawable.highp, "ใช้สัญชาตญาณของคุณ มันกำลังนำทางคุณอยู่")
-        )
+        val day = arguments?.getString("day") ?: ""
+        val zodiac = arguments?.getString("zodiac") ?: ""
 
         btnOra.setOnClickListener {
 
-            val randomCard = cards[Random.nextInt(cards.size)]
-            cardImage.setImageResource(randomCard.first)
-            textAdvice.text = randomCard.second
+            val index = FortuneCalculator.getHealthCard(day, zodiac)
+            val card = TarotDeck.cards[index]
+
+            cardImage.setImageResource(R.drawable.backcard)
+            cardImage.cameraDistance = 8000 * resources.displayMetrics.density
+
+            flipCard(cardImage, card.image, 4, textAdvice, card.meanings["health"] ?: "")
         }
 
-        btnb.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, CategoriesFragment())
-                .addToBackStack(null)
-                .commit()
+            btnb.setOnClickListener {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.contentContainer, CategoriesFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
+
+            btnnx.setOnClickListener {
+
+                val fragment = ShowFragment()
+                fragment.arguments = arguments
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.contentContainer, fragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+        }
+    fun flipCard(imageView: ImageView, finalImage: Int, flips: Int, textView: TextView, advice: String) {
+        if (flips <= 0) {
+            imageView.setImageResource(finalImage)
+            imageView.rotationY = 0f
+
+            // แสดงข้อความตอนหมุนเสร็จ
+            textView.text = advice
+            return
         }
 
-        btnnx.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.contentContainer, ShowFragment())
-                .addToBackStack(null)
-                .commit()
-        }
+        imageView.animate()
+            .rotationY(90f)
+            .setDuration(200)
+            .withEndAction {
+
+                if (flips == 1) {
+                    imageView.setImageResource(finalImage)
+                } else {
+                    imageView.setImageResource(R.drawable.backcard)
+                }
+
+                imageView.rotationY = -90f
+
+                imageView.animate()
+                    .rotationY(0f)
+                    .setDuration(200)
+                    .withEndAction {
+                        flipCard(imageView, finalImage, flips - 1, textView, advice)
+                    }
+                    .start()
+            }
+            .start()
     }
-}
+    }

@@ -66,8 +66,7 @@ class InfoFragment : Fragment(R.layout.fragment_info) {
 
             val fragment = CategoriesFragment()
             fragment.arguments = bundle
-
-            (activity as MainActivity).openTab(CategoriesFragment(),2)
+            (activity as MainActivity).openTab(fragment, 2)
         }
     }
 }
