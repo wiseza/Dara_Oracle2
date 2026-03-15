@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.dara.R
 import java.text.SimpleDateFormat
@@ -34,6 +35,7 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
         val day = arguments?.getString("day") ?: ""
         val zodiac = arguments?.getString("zodiac") ?: ""
 
+
         btnop.setOnClickListener {
 
             val bundle = Bundle()
@@ -43,7 +45,19 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
             val fragment = WorkFragment()
             fragment.arguments = bundle
 
-            (activity as MainActivity).openTab(fragment,2)
+            (activity as MainActivity).openTab(fragment, 2)
+        }
+
+
+        btnop.setOnLongClickListener {
+
+            UserPrefs.clearUserInfo(requireContext())
+
+            Toast.makeText(requireContext(), "รีเซ็ตข้อมูลทั้งหมดแล้ว", Toast.LENGTH_SHORT).show()
+
+            (activity as MainActivity).openTab(HomeFragment(), 0)
+
+            true
         }
     }
 }

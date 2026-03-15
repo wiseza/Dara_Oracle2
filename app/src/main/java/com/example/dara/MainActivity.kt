@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import java.util.Calendar
@@ -32,8 +33,21 @@ class MainActivity : AppCompatActivity() {
             openTab(CalendarFragment(), 1)
         }
 
-        findViewById<View>(R.id.categoriesContainer).setOnClickListener {
-            openTab(CategoriesFragment(), 2)
+        val categoriesContainer = findViewById<View>(R.id.categoriesContainer)
+
+        categoriesContainer.setOnClickListener {
+
+            if (!UserPrefs.hasUserInfo(this)) {
+
+                Toast.makeText(this,"กรุณาใส่วันเกิดและราศีก่อน",Toast.LENGTH_SHORT).show()
+
+                openTab(InfoFragment(), 0)
+
+            } else {
+
+                openTab(CategoriesFragment(), 2)
+
+            }
         }
     }
 

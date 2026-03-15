@@ -1,16 +1,17 @@
 package com.example.dara
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class LoveFragment : Fragment(R.layout.fragment_love) {
 
-    var currentCard: TarotCard? = null
-    var showingInfo = false
+    private var currentCardIndex: Int = -1
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,15 +25,36 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
         val day = arguments?.getString("day") ?: ""
         val zodiac = arguments?.getString("zodiac") ?: ""
 
+        if (UserPrefs.isTodayFortuneSaved(requireContext())) {
+            currentCardIndex = UserPrefs.getLoveCardIndex(requireContext())
+            if (currentCardIndex != -1) {
+                val card = TarotDeck.cards[currentCardIndex]
+                cardImage.setImageResource(card.image)
+                textAdvice.text = card.meanings["love"] ?: ""
+                btnOra.isEnabled = false
+            }
+        } else {
+            cardImage.setImageResource(R.drawable.backcard)
+            textAdvice.text = ""
+        }
+
         btnOra.setOnClickListener {
 
-            val index = FortuneCalculator.getLoveCard(day, zodiac)
-            val card = TarotDeck.cards[index]
+            if (!UserPrefs.isTodayFortuneSaved(requireContext())) {
 
-            cardImage.setImageResource(R.drawable.backcard)
-            cardImage.cameraDistance = 8000 * resources.displayMetrics.density
+                val index = FortuneCalculator.getLoveCard(day, zodiac)
+                val card = TarotDeck.cards[index]
 
-            flipCard(cardImage, card.image, 4, textAdvice, card.meanings["love"] ?: "")
+                currentCardIndex = index
+
+                saveSingleCardIndex(requireContext(), index, "love")
+
+                flipCard(cardImage, card.image, 4, textAdvice, card.meanings["love"] ?: "")
+                btnOra.isEnabled = false
+
+            } else {
+                Toast.makeText(requireContext(),"คุณได้ทำนายดวงวันนี้ไปแล้ว",Toast.LENGTH_SHORT).show()
+            }
         }
 
 
@@ -50,6 +72,14 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
 
             (activity as MainActivity).openTab(fragment, 2)
         }
+    }
+
+    private fun saveSingleCardIndex(context: Context, index: Int, category: String) {
+        val work = if (category == "work") index else UserPrefs.getWorkCardIndex(context)
+        val love = if (category == "love") index else UserPrefs.getLoveCardIndex(context)
+        val money = if (category == "money") index else UserPrefs.getMoneyCardIndex(context)
+        val health = if (category == "health") index else UserPrefs.getHealthCardIndex(context)
+        UserPrefs.saveCardIndices(context, work, love, money, health)
     }
     fun flipCard(imageView: ImageView, finalImage: Int, flips: Int, textView: TextView, advice: String) {
         if (flips <= 0) {

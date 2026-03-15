@@ -49,15 +49,9 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
 
         btnOra.setOnClickListener {
             if (!UserPrefs.isTodayFortuneSaved(requireContext())) {
-                // สุ่มการ์ดเฉพาะถ้ายังไม่ได้สุ่มในวันนี้
                 val index = FortuneCalculator.getWorkCard(day, zodiac)
                 val card = TarotDeck.cards[index]
                 currentCardIndex = index
-
-                // บันทึกการ์ดลง SharedPreferences (รวมทุกหมวด)
-                // ควรบันทึกทุกหมวดพร้อมกันที่ ShowFragment หรือเก็บทีละตัว?
-                // วิธีง่าย: บันทึกทีละตัวเมื่อสุ่มครบทุกหมวด หรือให้ ShowFragment เป็นตัวบันทึกสุดท้าย
-                // แต่เพื่อให้การ์ดคงอยู่แม้ยังไม่ถึง ShowFragment เราสามารถบันทึกทีละหมวดได้
                 saveSingleCardIndex(requireContext(), index, "work")
 
                 flipCard(cardImage, card.image, 4, textAdvice, card.meanings["work"] ?: "")
