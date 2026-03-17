@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import java.text.SimpleDateFormat
@@ -175,7 +176,12 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
         tvFullDate?.text = "$dayMonth $thaiYear"
 
         view.findViewById<View>(R.id.btnback_cal)?.setOnClickListener {
-            (activity as? MainActivity)?.openTab(ShowFragment(), 0)
+            if (UserPrefs.isAllCategoriesDrawn(requireContext())) {
+                (activity as? MainActivity)?.openTab(ShowFragment(), 0)
+            } else {
+                Toast.makeText(requireContext(), "กรุณาสุ่มดวงให้ครบทุกหมวดก่อน", Toast.LENGTH_SHORT).show()
+                (activity as? MainActivity)?.openTab(InfoFragment(), 0)
+            }
         }
 
         tabWork = view.findViewById(R.id.tab_work) ?: return

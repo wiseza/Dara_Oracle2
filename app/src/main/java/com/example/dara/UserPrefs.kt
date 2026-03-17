@@ -78,6 +78,21 @@ object UserPrefs {
         val today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR)
         return lastUpdate == today
     }
+
+    fun isAllCategoriesDrawn(context: Context): Boolean {
+        return getWorkCardIndex(context) != -1 &&
+                getLoveCardIndex(context) != -1 &&
+                getMoneyCardIndex(context) != -1 &&
+                getHealthCardIndex(context) != -1
+
+    }
+    fun saveSingleCardIndex(context: Context, category: String, index: Int) {
+        val work = if (category == "work") index else getWorkCardIndex(context)
+        val love = if (category == "love") index else getLoveCardIndex(context)
+        val money = if (category == "money") index else getMoneyCardIndex(context)
+        val health = if (category == "health") index else getHealthCardIndex(context)
+        saveCardIndices(context, work, love, money, health)
+    }
     fun clearFortuneData(context: Context) {
         val editor = getPrefs(context).edit()
         editor.remove(KEY_WORK_CARD)

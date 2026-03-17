@@ -38,13 +38,10 @@ class MainActivity : AppCompatActivity() {
         categoriesContainer.setOnClickListener {
 
             if (!UserPrefs.hasUserInfo(this)) {
-
                 Toast.makeText(this,"กรุณาใส่วันเกิดและราศีก่อน",Toast.LENGTH_SHORT).show()
-
                 openTab(InfoFragment(), 0)
 
             } else {
-
                 openTab(CategoriesFragment(), 2)
 
             }

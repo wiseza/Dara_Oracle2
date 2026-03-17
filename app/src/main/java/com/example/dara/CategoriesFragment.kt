@@ -17,6 +17,12 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (!UserPrefs.hasUserInfo(requireContext())) {
+            Toast.makeText(requireContext(), "กรุณาใส่วันเกิดและราศีก่อน", Toast.LENGTH_SHORT).show()
+            (activity as? MainActivity)?.openTab(InfoFragment(), 0)
+            return
+        }
+
         val calendar = Calendar.getInstance()
         val localeThai = Locale("th", "TH")
 

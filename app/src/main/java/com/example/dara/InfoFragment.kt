@@ -56,8 +56,6 @@ class InfoFragment : Fragment(R.layout.fragment_info) {
 
             UserPrefs.saveUserInfo(requireContext(), day, zodiac)
 
-            UserPrefs.saveUserInfo(requireContext(), day, zodiac)
-
             (activity as MainActivity).openTab(CategoriesFragment(), 2)
         }
     }
