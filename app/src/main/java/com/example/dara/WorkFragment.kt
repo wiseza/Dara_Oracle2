@@ -40,16 +40,14 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
         }
 
         btnOra.setOnClickListener {
-            // ตรวจสอบว่ายังไม่เคยสุ่มงานวันนี้ (index == -1)
             if (UserPrefs.getWorkCardIndex(requireContext()) == -1) {
                 val index = FortuneCalculator.getWorkCard(day, zodiac)
                 val card = TarotDeck.cards[index]
                 currentCardIndex = index
 
-                // บันทึก index พร้อมอัปเดตวันที่ (ใช้ฟังก์ชันที่มีอยู่แล้ว)
                 UserPrefs.saveCardIndices(
                     requireContext(),
-                    index,                       // work
+                    index,
                     UserPrefs.getLoveCardIndex(requireContext()),
                     UserPrefs.getMoneyCardIndex(requireContext()),
                     UserPrefs.getHealthCardIndex(requireContext())

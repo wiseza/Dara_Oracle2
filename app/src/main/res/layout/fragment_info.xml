@@ -8,8 +8,6 @@
     android:background="@drawable/info_dara"
     tools:context=".InfoFragment">
 
-    <!-- หัวข้อ -->
-
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"

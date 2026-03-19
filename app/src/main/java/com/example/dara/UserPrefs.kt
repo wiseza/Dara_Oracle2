@@ -17,7 +17,6 @@ object UserPrefs {
     private fun getPrefs(context: Context): SharedPreferences =
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-    // บันทึกข้อมูลผู้ใช้ (วันเกิดและราศี)
     fun saveUserInfo(context: Context, day: String, zodiac: String) {
         val editor = getPrefs(context).edit()
         editor.putString(KEY_DAY, day)
@@ -34,7 +33,6 @@ object UserPrefs {
     fun hasUserInfo(context: Context): Boolean =
         !getUserDay(context).isNullOrEmpty() && !getUserZodiac(context).isNullOrEmpty()
 
-    // บันทึก index การ์ดของแต่ละหมวด พร้อมวันที่
     fun saveCardIndices(context: Context, work: Int, love: Int, money: Int, health: Int) {
         val today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR)
         val editor = getPrefs(context).edit()
@@ -72,7 +70,6 @@ object UserPrefs {
     fun getHealthCardIndex(context: Context): Int =
         getPrefs(context).getInt(KEY_HEALTH_CARD, -1)
 
-    // ตรวจสอบว่าได้บันทึกดวงของวันนี้ไว้หรือยัง
     fun isTodayFortuneSaved(context: Context): Boolean {
         val lastUpdate = getPrefs(context).getInt(KEY_LAST_UPDATE, -1)
         val today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR)
@@ -103,7 +100,6 @@ object UserPrefs {
         editor.apply()
     }
 
-    // ล้างข้อมูลทั้งหมด (รวมวันเกิด/ราศี)
     fun clearUserInfo(context: Context) {
         getPrefs(context).edit().clear().apply()
     }
