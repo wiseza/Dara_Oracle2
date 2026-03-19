@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import java.text.SimpleDateFormat
 import java.util.*
 
-// Data Class สำหรับเก็บสี
 data class DailyColor(
     val work: List<String>,
     val money: List<String>,
@@ -21,7 +20,6 @@ data class DailyColor(
 
 class ShowFragment : Fragment(R.layout.fragment_show) {
 
-    // Map สีมงคลตามวัน
     private val colorMap = mapOf(
         Calendar.SUNDAY to DailyColor(
             listOf("#6F31B1", "#000000"),

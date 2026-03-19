@@ -25,7 +25,7 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
         val day = arguments?.getString("day") ?: ""
         val zodiac = arguments?.getString("zodiac") ?: ""
 
-        // โหลดการ์ดที่เคยสุ่มไว้แล้ว (ถ้ามี)
+
         currentCardIndex = UserPrefs.getLoveCardIndex(requireContext())
         if (currentCardIndex != -1) {
             val card = TarotDeck.cards[currentCardIndex]
@@ -44,7 +44,7 @@ class LoveFragment : Fragment(R.layout.fragment_love) {
                 val card = TarotDeck.cards[index]
                 currentCardIndex = index
 
-                // บันทึก index พร้อมวันที่ (ใช้ saveCardIndices เพื่อคงค่าหมวดอื่น)
+
                 UserPrefs.saveCardIndices(
                     requireContext(),
                     UserPrefs.getWorkCardIndex(requireContext()),

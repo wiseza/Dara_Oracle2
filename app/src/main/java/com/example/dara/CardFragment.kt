@@ -11,6 +11,6 @@ class CardFragment : Fragment(R.layout.fragment_card) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // ใส่ logic ของหน้านี้ตรงนี้
+
     }
 }

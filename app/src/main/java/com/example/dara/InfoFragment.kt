@@ -19,7 +19,7 @@ class InfoFragment : Fragment(R.layout.fragment_info) {
         val tvDayName = view.findViewById<TextView>(R.id.tv_day_name_info)
         tvDayName?.text = SimpleDateFormat("EEEE", localeThai).format(calendar.time)
 
-        // 2. แสดงวันที่ เดือน ปี พ.ศ.
+
         val tvFullDate = view.findViewById<TextView>(R.id.tv_full_date_info)
         val dayMonth = SimpleDateFormat("dd MMMM", localeThai).format(calendar.time)
         val thaiYear = calendar.get(Calendar.YEAR) + 543

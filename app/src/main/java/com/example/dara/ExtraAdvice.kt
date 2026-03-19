@@ -2,7 +2,7 @@ package com.example.dara
 
 object ExtraAdvice {
 
-    // --- ข้อความสำหรับหมวดการงาน ---
+
     private val workAdviceHigh = listOf(
         "วันนี้คุณพร้อมสำหรับความท้าทายใหม่ๆ",
         "ความคิดสร้างสรรค์จะพาคุณไปไกล",
@@ -24,7 +24,7 @@ object ExtraAdvice {
         "ระวังการเปลี่ยนแปลงที่ไม่คาดคิดในที่ทำงาน"
     )
 
-    // --- ข้อความสำหรับหมวดความรัก ---
+
     private val loveAdviceHigh = listOf(
         "ความรักวันนี้อบอุ่น เต็มไปด้วยความเข้าใจ",
         "คนโสดมีโอกาสพบคนถูกใจ",
@@ -46,7 +46,7 @@ object ExtraAdvice {
         "ระวังความไม่ชัดเจนหรือความลับในความสัมพันธ์"
     )
 
-    // --- ข้อความสำหรับหมวดการเงิน ---
+
     private val moneyAdviceHigh = listOf(
         "การเงินไหลคล่อง มีโชคเล็กๆ น้อยๆ",
         "การลงทุนที่วางแผนไว้เริ่มให้ผล",
@@ -68,7 +68,7 @@ object ExtraAdvice {
         "หลีกเลี่ยงการเสี่ยงโชคหรือการพนัน"
     )
 
-    // --- ข้อความสำหรับหมวดสุขภาพ ---
+
     private val healthAdviceHigh = listOf(
         "สุขภาพแข็งแรง พลังงานดีตลอดวัน",
         "การออกกำลังกายสม่ำเสมอเห็นผลแล้ว",
@@ -90,7 +90,6 @@ object ExtraAdvice {
         "ระวังอุบัติเหตุหรืออาการกระทันหัน"
     )
 
-    // ฟังก์ชันสุ่มข้อความตามระดับดาว (high = 4-5 ดาว, low = 1-3 ดาว)
     fun getRandomWorkAdvice(score: Int, count: Int = 1): List<String> {
         val list = if (score >= 4) workAdviceHigh else workAdviceLow
         return list.shuffled().take(count)

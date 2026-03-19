@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import java.text.SimpleDateFormat
 import java.util.*
 
-// โครงสร้างข้อมูลสำหรับเก็บรายละเอียด (ต้องมีสี 2 สีเสมอเพื่อให้ขึ้น 2 วงตามภาพ)
+
 data class LuckDetail(val colors: List<String>, val description: String)
 data class DayInfo(
     val work: LuckDetail,
@@ -24,133 +24,133 @@ data class DayInfo(
 
 class CalendarFragment : Fragment(R.layout.fragment_calendar) {
 
-    // ข้อมูลสีอ้างอิงตาม "ตารางตารางสีเสื้อประจำวัน" (อัปเดตสีให้ตรงเป๊ะ)
+
     private val fullLuckMap = mapOf(
         Calendar.SUNDAY to DayInfo(
             LuckDetail(listOf("#6F31B1", "#000000"), "แก้ปัญหาเก่ง มีไหวพริบ"), // การงาน: ม่วง-ดำ
             LuckDetail(
                 listOf("#006400", "#32CD32"),
                 "เหนี่ยวทรัพย์ รับโชค"
-            ),    // การเงิน: เขียวเข้ม-เขียว
+            ),
             LuckDetail(
                 listOf("#FF69B4", "#FFC0CB"),
                 "รักหวานแหวว"
-            ),           // ความรัก: ชมพูเข้ม-ชมพูอ่อน
+            ),
             LuckDetail(
                 listOf("#6F31B1", "#8A2BE2"),
                 "เสริมภูมิคุ้มกัน กระฉับกระเฉง"
-            ), // สุขภาพ: ม่วง-ม่วงสว่าง
+            ),
             LuckDetail(
                 listOf("#1976D2", "#29B6F6"),
                 "การเงินรั่วไหล เก็บเงินไม่อยู่"
-            ) // กาลกิณี (คงเดิม)
+            )
         ),
         Calendar.MONDAY to DayInfo(
             LuckDetail(
                 listOf("#4E2F1A", "#FF7F27"),
                 "ผู้ใหญ่เมตตา งานราบรื่น"
-            ), // การงาน: น้ำตาล-ส้ม
+            ),
             LuckDetail(listOf("#6F31B1", "#000000"), "ดึงดูดโชคลาภ"),           // การเงิน: ม่วง-ดำ
             LuckDetail(
                 listOf("#006400", "#32CD32"),
                 "รักสดใส มีเสน่ห์"
-            ),       // ความรัก: เขียวเข้ม-เขียว
+            ),
             LuckDetail(
                 listOf("#4169E1", "#00BFFF"),
                 "ร่างกายแข็งแรง ไร้โรคภัย"
-            ), // สุขภาพ: น้ำเงิน-ฟ้า
+            ),
             LuckDetail(listOf("#D32F2F", "#D32F2F"), "อุปสรรคเยอะ ติดขัดบ่อย")
         ),
         Calendar.TUESDAY to DayInfo(
             LuckDetail(
                 listOf("#6F31B1", "#8A2BE2"),
                 "งานเดิน ก้าวหน้า"
-            ),      // การงาน: ม่วง-ม่วงสว่าง
+            ),
             LuckDetail(
                 listOf("#4E2F1A", "#FF7F27"),
                 "เงินทองไหลมาเทมา"
-            ),      // การเงิน: น้ำตาล-ส้ม
+            ),
             LuckDetail(listOf("#6F31B1", "#000000"), "มีเสน่ห์ลึกลับ"),         // ความรัก: ม่วง-ดำ
             LuckDetail(
                 listOf("#CC0000", "#FF0000"),
                 "เสริมสร้างพลังกาย พลังใจ"
-            ), // สุขภาพ: แดงเข้ม-แดง
+            ),
             LuckDetail(listOf("#FBC02D", "#9E9E9E"), "ระวังความขัดแย้ง")
         ),
         Calendar.WEDNESDAY to DayInfo(
             LuckDetail(
                 listOf("#4169E1", "#00BFFF"),
                 "เจรจาสำเร็จ"
-            ),           // การงาน: น้ำเงิน-ฟ้า
+            ),
             LuckDetail(
                 listOf("#6F31B1", "#8A2BE2"),
                 "รับทรัพย์ไม่ขาดมือ"
-            ),      // การเงิน: ม่วง-ม่วงสว่าง
+            ),
             LuckDetail(
                 listOf("#4E2F1A", "#FF7F27"),
                 "ความรักมั่นคง"
-            ),          // ความรัก: น้ำตาล-ส้ม
+            ),
             LuckDetail(
                 listOf("#FFFF00", "#C0C0C0"),
                 "จิตใจแจ่มใส ผ่อนคลาย"
-            ),   // สุขภาพ: เหลือง-เทา
+            ),
             LuckDetail(listOf("#F06292", "#F06292"), "โชคลาภสะดุด")
         ),
         Calendar.THURSDAY to DayInfo(
             LuckDetail(
                 listOf("#FFFF00", "#FFFFFF"),
                 "เริ่มต้นงานใหม่ได้ดี"
-            ),    // การงาน: เหลือง-ขาว
+            ),
             LuckDetail(
                 listOf("#CC0000", "#FF0000"),
                 "เฮงๆ ปังๆ"
-            ),             // การเงิน: แดงเข้ม-แดง
+            ),
             LuckDetail(
                 listOf("#4169E1", "#00BFFF"),
                 "เข้าใจกันดี"
-            ),           // ความรัก: น้ำเงิน-ฟ้า
+            ),
             LuckDetail(
                 listOf("#006400", "#32CD32"),
                 "ฟื้นฟูร่างกาย ป้องกันโรค"
-            ), // สุขภาพ: เขียวเข้ม-เขียว
+            ),
             LuckDetail(listOf("#7B1FA2", "#212121"), "ผู้ใหญ่ไม่สนับสนุน")
         ),
         Calendar.FRIDAY to DayInfo(
             LuckDetail(
                 listOf("#006400", "#32CD32"),
                 "ไอเดียพุ่ง งานสร้างสรรค์"
-            ), // การงาน: เขียวเข้ม-เขียว
+            ),
             LuckDetail(
                 listOf("#FF69B4", "#FFC0CB"),
                 "เงินเข้าง่าย จ่ายคล่อง"
-            ),   // การเงิน: ชมพูเข้ม-ชมพูอ่อน
+            ),
             LuckDetail(
                 listOf("#FFFF00", "#FFFFFF"),
                 "รักบริสุทธิ์"
-            ),           // ความรัก: เหลือง-ขาว
+            ),
             LuckDetail(
                 listOf("#4E2F1A", "#FF7F27"),
                 "ระบบไหลเวียนดี สดชื่น"
-            ),    // สุขภาพ: น้ำตาล-ส้ม
+            ),
             LuckDetail(listOf("#7B1FA2", "#7B1FA2"), "งานล่าช้า แบกภาระหนัก")
         ),
         Calendar.SATURDAY to DayInfo(
             LuckDetail(
                 listOf("#CC0000", "#FF0000"),
                 "มีพลัง อำนาจ"
-            ),          // การงาน: แดงเข้ม-แดง
+            ),
             LuckDetail(
                 listOf("#4169E1", "#00BFFF"),
                 "โชคลาภก้อนใหญ่"
-            ),         // การเงิน: น้ำเงิน-ฟ้า
+            ),
             LuckDetail(
                 listOf("#6F31B1", "#8A2BE2"),
                 "รักโรแมนติก"
-            ),           // ความรัก: ม่วง-ม่วงสว่าง
+            ),
             LuckDetail(
                 listOf("#FF69B4", "#FFC0CB"),
                 "สุขภาพคงที่ ลดความเครียด"
-            ), // สุขภาพ: ชมพูเข้ม-ชมพูอ่อน
+            ),
             LuckDetail(listOf("#388E3C", "#8BC34A"), "รักมีปัญหา ผิดใจกันง่าย")
         )
     )

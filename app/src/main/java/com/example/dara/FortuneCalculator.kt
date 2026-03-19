@@ -51,7 +51,7 @@ object FortuneCalculator {
         return weights.indices.last()
     }
 
-    // คำนวณน้ำหนักของไพ่แต่ละใบ
+
     private fun calculateWeights(day: String, zodiac: String): List<Double> {
         val baseWeight = 1.0
         val bonusWeight = 3.0

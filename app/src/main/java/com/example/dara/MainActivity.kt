@@ -15,16 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // ตรวจสอบว่าเป็นวันใหม่หรือไม่ ถ้าใช่ให้ล้างข้อมูลการ์ดเก่า (แต่คงวันเกิด/ราศีไว้)
         if (!UserPrefs.isTodayFortuneSaved(this)) {
             UserPrefs.clearFortuneData(this)
         }
 
-        // ตั้งค่า Fragment แรก (HomeFragment)
         replaceFragment(HomeFragment())
         setActiveTab(0)
 
-        // กำหนด listener สำหรับปุ่มแถบด้านล่าง
         findViewById<View>(R.id.homeContainer).setOnClickListener {
             openTab(HomeFragment(), 0)
         }
@@ -71,13 +68,13 @@ class MainActivity : AppCompatActivity() {
         val calendarIcon = findViewById<ImageView>(R.id.btnCalendar)
         val cardIcon = findViewById<ImageView>(R.id.btnCard)
 
-        // สีเริ่มต้นและสีที่ active
+
         val defaultColor = getColor(R.color.light_purple)
         val activeColor = getColor(R.color.black_purple)
         val defaultIconColor = getColor(R.color.black)
         val activeIconColor = getColor(R.color.white)
 
-        // รีเซ็ตทุกปุ่ม
+
         listOf(homeCircle, calendarCircle, cardCircle).forEach {
             it.setColorFilter(defaultColor)
             it.animate()
@@ -98,7 +95,6 @@ class MainActivity : AppCompatActivity() {
                 .start()
         }
 
-        // ทำให้ปุ่มที่ active ลอยขึ้นและเปลี่ยนสี
         when (active) {
             0 -> {
                 homeCircle.setColorFilter(activeColor)
